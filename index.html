@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<HTML>
+    <HEAD>
+        <title>Paul Kim's Computer Shop</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
+        <style>
+            * { margin: 0; padding: 0; }
+            body { font-family: 'Nanum Myeongjo', cursive; }
+            li { list-style: none; }
+            a { text-decoration: none; }
+            img { border: 0; }
+        </style>
+
+        <style>
+        .btn {
+          background-color: #ddd;
+          border: none;
+          color: black;
+          padding: 3px 5px;
+          text-align: center;
+          font-size: 16px;
+          margin: 2px 1px;
+          transition: 0.3s;
+        }
+        
+        .btn:hover {
+          background-color: #3e8e41;
+          color: white;
+        }
+        </style>
+
+        <style>
+            .ml5 {
+            position: relative;
+            top: 60px;
+            left: 200px;
+            font-weight: 300;
+            font-size: 4.5em;
+            color: #402d2d;
+            }
+
+            .ml5 .text-wrapper {
+            position: relative;
+            display: inline-block;
+            padding-top: 0.1em;
+            padding-right: 0.05em;
+            padding-bottom: 0.15em;
+            line-height: 1em;
+            }
+
+            .ml5 .line {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            height: 3px;
+            width: 100%;
+            background-color: #402d2d;
+            transform-origin: 0.5 0;
+            }
+
+            .ml5 .ampersand {
+            font-family: Baskerville, "EB Garamond", serif;
+            font-style: italic;
+            font-weight: 400;
+            width: 1em;
+            margin-right: -0.1em;
+            margin-left: -0.1em;
+            }
+
+            .ml5 .letters {
+            display: inline-block;
+            opacity: 0;
+            }
+        </style>
+
+        <style>
+        .sidebutton {
+          border-radius: 0px;
+          background-color: #a7f5ba;
+          border: none;
+          color: #FFFFFF;
+          text-align: left;
+          font-size: 16px;
+          padding: 10px;
+          width: 200px;
+          transition: all 0.5s;
+          cursor: pointer;
+          margin: 5px;
+        }
+        
+        .sidebutton span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+        
+        .sidebutton span:after {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+        
+        .sidebutton:hover span {
+          padding-right: 25px;
+        }
+        
+        .sidebutton:hover span:after {
+          opacity: 1;
+          right: 0;
+        }
+        </style>
+
+
+        <style>
+            .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            }
+
+            .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            }
+            .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+            }
+
+            .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+            }
+
+            .text {
+            color: white;
+            font-size: 30px;
+            font-weight: 500;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+                text-align: center;
+            }
+
+            .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+            }
+
+            .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            }
+
+            .active, .dot:hover {
+            background-color: #717171;
+            }
+
+            .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+            }
+
+            @-webkit-keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+            }
+
+            @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+            }
+
+            @media only screen and (max-width: 300px) {
+             .prev, .next,.text {font-size: 11px}
+            }
+        </style>
+
+        <script type="text/javascript">
+            function AlertIt() {
+            var answer = confirm ("카카오톡 아이디는 poopidoopi97 입니다!")
+            if (answer)
+            window.location="#";
+            }
+        </script>
+
+        <script type="text/javascript">
+            function GettingReady() {
+            var answer = confirm ("준비중")
+            if (answer)
+            window.location="#";
+            }
+        </script>
+
+        <!-- 헤더 -->
+        <style>
+            #main_header {
+            
+                width: 1050px; margin: 0 auto;
+                height: 250px;
+                position: relative;
+            }
+            #main_header > #title {
+                font-size: 200%;
+                position: absolute;
+                left: 200px; top: 55px;
+                font-family: 'Press Start 2p', cursive;
+            }
+            #main_header > #main_lnb {
+                position: absolute;
+                left: 100px; bottom: 10px;
+            }
+        </style>
+
+
+        <!--컴퓨터 부품 목록-->
+        <style>
+            #main_lnb > ul { overflow: hidden; font-family: ''; }
+            #main_lnb > ul > li { float: left; }
+            #main_lnb > ul > li > a {
+                display: block;
+                padding: 5px 5px;
+                border: 2px solid black;
+                font-size: 115%;
+            }
+            
+        </style>
+        
+        <style>
+                #content {
+                    width: 1050px; margin: 0 auto;
+
+                    overflow: hidden;
+                }
+                #content > #main_section {
+                    width: 850px;
+                    float: right;
+                }
+                #content > #main_aside {
+                    width: 140px;
+                    float: right;
+                }
+                #content > #main_ad {
+                    width: 50px;
+                    float: right;
+                }
+        </style>
+
+       
+        <style>
+                #main_section > article.main_article {
+                    margin-bottom: 10px;
+                    padding: 20px;
+                    border: 2px solid black;
+                    border-radius: 10px 10px 10px 10px;
+                    border-style: bold;
+                }
+        </style>
+
+        <style>
+            .item {
+                overflow: hidden;
+                padding: 0px;
+                border: none;
+                border-top: none;
+                border-radius: 0 0 0 0 ;
+                font-size:100%;
+            }
+            .item:hover {background: rgb(231, 255, 96);
+                color: rgb(216, 46, 46); }
+        </style>
+
+        <style>
+        input:nth-of-type(1) { display: none;}
+        input:nth-of-type(1) ~ div:nth-of-type(1) { display: none; }
+        input:nth-of-type(1):checked ~ div:nth-of-type(1) { display: block; }
+
+        input:nth-of-type(2) { display: none; }
+        input:nth-of-type(2) ~ div:nth-of-type(2) { display: none; }
+        input:nth-of-type(2):checked ~ div:nth-of-type(2) { display: block; }
+    
+        section.buttons { overflow: hidden; }
+        section.buttons > label { 
+         
+            display: block; float: left;
+
+            width: 100px; height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size:110%;
+            
+            box-sizing: border-box;
+            border: 2px solid rgb(0, 0, 0);
+        
+            background: white;
+            color: black;
+        }
+        input:nth-of-type(1):checked ~ section.buttons >  label:nth-of-type(1) {
+            background: black;
+            color: white;
+            border-style: dotted;
+        }
+        input:nth-of-type(2):checked ~ section.buttons >  label:nth-of-type(2) {
+            background: black;
+            color: white;
+            border-style: dotted;
+        }
+    </style>
+
+
+    <style>
+        #main_footer {
+            width: 1050px; margin: 0 auto;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+
+    <style>
+        #main_footer2 {
+            width: 1050px; margin: 0 auto;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        #main_footer2 > h3 {
+            font-size:200%
+        }
+    </style>
+    
+    <style>
+        #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+        }
+
+        #myBtn:hover {
+        background-color: #555;
+        }
+    </style>
+
+    
+  <script>
+      function goHome(){
+          window.location.href="#"
+      }
+  </script>
+
+    </HEAD>
+    <BODY>
+            <div id="clockbox"></div>
+
+            <script type="text/javascript">
+            function GetClock(){
+            var d=new Date();
+            var nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+            var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+            if(nhour==0){ap=" AM";nhour=12;}
+            else if(nhour<12){ap=" AM";}
+            else if(nhour==12){ap=" PM";}
+            else if(nhour>12){ap=" PM";nhour-=12;}
+
+            if(nmin<=9) nmin="0"+nmin;
+            if(nsec<=9) nsec="0"+nsec;
+
+            var clocktext=""+nyear+"/"+(nmonth+1)+"/"+ndate+" "+nhour+":"+nmin+":"+nsec+ap+"";
+            document.getElementById('clockbox').innerHTML=clocktext;
+            }
+
+            GetClock();
+            setInterval(GetClock,1000);
+            </script>
+
+
+        </script>
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <header id="main_header">
+                    <h1 class="ml5">
+                            <span class="text-wrapper" onclick="goHome()">
+                              <span class="line line1"></span>
+                              <span class="letters letters-left">Paul Kim</span>
+                              <span class="letters ampersand">&amp;</span>
+                              <span class="letters letters-right">Computer</span>
+                              <span class="line line2"></span>
+                            </span>
+                          </h1>
+                          
+                          <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+                          
+                    <nav id="main_lnb">
+                        <ul>
+                            <li><a href="javascript:GettingReady();"><button class="btn">GPU/그래픽 카드</button></a></li>
+                            <li><a href="javascript:GettingReady();"><button class="btn">CPU/중앙처리 장치</button></a></li>
+                            <li><a href="javascript:GettingReady();"><button class="btn">RAM/램</button></a></li>
+                            <li><a href="javascript:GettingReady();"><button class="btn">Memory/저장공간</button></a></li>
+                            <li><a href="javascript:GettingReady();"><button class="btn">Case/케이스</button></a></li>
+                            <li><a href="javascript:GettingReady();"><button class="btn">Power/파워</button></a></li>
+                            <li><a href="javascript:GettingReady();"><button class="btn">Main Board/메인보드</button></a></li>
+                        </ul>
+                    </nav>
+            </header>
+
+            <div id="content">
+                    <section id="main_section">
+                        <div class="slideshow-container">
+                                <div class="mySlides fade">
+                                        <div class="numbertext">1 / 5</div>
+                                        <a href="http://pubg.game.daum.net/pubg/pds/download/index.daum" target="_blank"><img src="배틀그라운드권장사양.png" height=400; style="width:100%"></a>
+                                        <div class="text">배틀그라운드 최저/권장사양 알아보러가기</div>
+                                </div>
+                                <div class="mySlides fade">
+                                        <div class="numbertext">2 / 5</div>
+                                        <a href="http://www.leagueoflegends.co.kr/?m=download" target="_blank"><img src="롤권장사양.png" height=400; style="width:100%"></a>
+                                        <div class="text">리그오브레전드 최저/권장사양 알아보러가기</div>
+                                    </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext">3 / 5</div>
+                                    <a href="https://kr.shop.battle.net/ko-kr/product/overwatch?p=20991"><img src="오버워치권장사양.jpg" height=400; style="width:100%"></a>
+                                    <div class="text">오버워치 최저/권장사양 알아보러가기</div>
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext">4 / 5</div>
+                                    <a href="http://fifaonline4.nexon.com/pds/download"><img src="피파온라인권장사양.jpg" height=400; style="width:100%"></a>
+                                    <div class="text">피파온라인4 최저/권장사양 알아보러가기</div>
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext">5 / 5</div>
+                                    <a href="https://www.ea.com/games/apex-legends/about/pc-system-requirements"><img src="에이펙스레전드권장사양.jpg" height=400; style="width:100%"></a>
+                                    <div class="text">에이펙스레전드 최저/권장사양 알아보러가기</div>
+                                </div>
+
+                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>                  
+                        </div>
+                        
+                        <div style="text-align:center">
+                            <span class="dot" onclick="currentSlide(1)"></span> 
+                            <span class="dot" onclick="currentSlide(2)"></span> 
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
+                            <span class="dot" onclick="currentSlide(5)"></span>
+                        </div>
+                        <article class="main_article">
+                                <h1>배틀그라운드 추천 PC !!!</h1>
+                                <p><table>
+                                    <td>
+                                        <p><a href="http://shop.danawa.com/pcshop/?controller=brandPCBlog&methods=main&representProductSeq=2158397" target="_blank"><img src="battlegrounds.jpg" width=400; height=280;></a></p>
+                                    </td>
+                                    <td>
+                                        <p><a href="http://shop.danawa.com/pcshop/?controller=brandPCBlog&methods=main&representProductSeq=2158397" target="_blank"><img src="배그사양.png" width=380; height=280;></a></p>
+                                    </td>
+                                </table></p>
+                            </article>
+                            <article class="main_article">
+                                <h1>오버워치 추천 PC !!!</h1>
+                                <p><table>
+                                        <td>
+                                            <p><a href="http://shop.danawa.com/pcshop/?controller=brandPCBlog&methods=main&representProductSeq=2158322" target="_blank"><img src="overwatch.jpg" width=400; height=280;></a></p>
+                                        </td>
+                                        <td>
+                                            <p><a href="http://shop.danawa.com/pcshop/?controller=brandPCBlog&methods=main&representProductSeq=2158322" target="_blank"><img src="오버워치사양.png" width=380; height=280;></a></p>
+                                        </td>
+                                    </table></p>
+                            </article>
+                            <article class="main_article">
+                                <h1>리그오브레전드 추천 PC !!!</h1>
+                                <p><table>
+                                        <td>
+                                            <p><a href="http://shop.danawa.com/pcshop/?controller=brandPCBlog&methods=main&representProductSeq=2030034" target="_blank"><img src="league of legends.jpg" width=400; height=280;></a></p>
+                                        </td>
+                                        <td>
+                                            <p><a href="http://shop.danawa.com/pcshop/?controller=brandPCBlog&methods=main&representProductSeq=2030034" target="_blank"><img src="롤사양.png" width=380; height=280;></a></p>
+                                        </td>
+                                    </table></p>
+                            </article>
+                            <article class="main_article">
+                                <h1>피파온라인4 추천 PC !!!</h1>
+                                <p><table>
+                                        <td>
+                                            <p><a href="http://shop.danawa.com/pcshop/?controller=brandPCBlog&methods=main&representProductSeq=2156907" target="_blank"><img src="fifonline4.jpg" width=400; height=280;></a></p>
+                                        </td>
+                                        <td>
+                                            <p><a href="http://shop.danawa.com/pcshop/?controller=brandPCBlog&methods=main&representProductSeq=2156907" target="_blank"><img src="피파온라인사양.png" width=380; height=280;></a></p>
+                                        </td>
+                                    </table></p>
+                            </article>
+                            <article class="main_article">
+                                <h1>에이펙스 레전드 추천 PC !!!</h1>
+                                <p><table>
+                                        <td>
+                                            <p><a href="http://shop.danawa.com/pcshop/?controller=brandPCBlog&methods=main&representProductSeq=2111485" target="_blank"><img src="apexlegends.jpg" width=400; height=280;></a></p>
+                                        </td>
+                                        <td>
+                                            <p><a href="http://shop.danawa.com/pcshop/?controller=brandPCBlog&methods=main&representProductSeq=2111485" target="_blank"><img src="에이팩스레전드사양.png" width=380; height=280;></a></p>
+                                        </td>
+                                    </table></p>
+                            </article>
+                    </section>
+
+
+                    
+                <div id="#main_aside">
+                        <input id="first" type="radio" name="tab" checked="checked" />
+                        <input id="second" type="radio" name="tab" />
+                        <section class="buttons">
+                            <label for="first">💻Intel💻</label>
+                            <label for="second">💻AMD💻</label>
+                        </section>
+                    <div class="tab_item">
+                        <ul>
+                            <li class="item"><a href="#"><button class="sidebutton"><span>💸10~40만원대💸</span></a></li>
+                            <li class="item"><a href="#"><button class="sidebutton"><span>💸50~80만원대💸</span></a></li>
+                            <li class="item"><a href="#"><button class="sidebutton"><span>💸90~120만원대💸</span></a></li>
+                            <li class="item"><a href="#"><button class="sidebutton"><span>💸130~150만원대💸</span></a></li>
+                            <li class="item"><a href="#"><button class="sidebutton"><span>💸160~190만원대💸</span></a></li>
+                            <li class="item"><a href="#"><button class="sidebutton"><span>💸200만원대이상💸</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="tab_item">
+                            <ul>
+                                <li class="item"><a href="#"><button class="sidebutton"><span>💸10~40만원대💸</span></a></li>
+                                <li class="item"><a href="#"><button class="sidebutton"><span>💸50~80만원대💸</span></a></li>
+                                <li class="item"><a href="#"><button class="sidebutton"><span>💸90~120만원대💸</span></a></li>
+                                <li class="item"><a href="#"><button class="sidebutton"><span>💸130~150만원대💸</span></a></li>
+                                <li class="item"><a href="#"><button class="sidebutton"><span>💸160~190만원대💸</span></a></li>
+                                <li class="item"><a href="#"><button class="sidebutton"><span>💸200만원대이상💸</span></a></li>
+                            </ul>
+                    </div>
+                </div>
+                <div id="#main_ad">
+                    
+                </div>
+            </div>
+            <footer id="main_footer2">
+                <h3>Contact Me Here:
+                    <a href="javascript:AlertIt();"><img src="카카오톡로고.png" width=50; height=50;></a>
+                    <a href="https://www.instagram.com/holy___water97/" target="_blank"><img src="인스타그램로고.jpg" width=50; height=50;></a>
+                    <a href="https://www.facebook.com/ES.Terran.AI.Noid" target="_blank"><img src="페북로고.png" width=50; height=50;></a>
+                    <a href="mailto:poopidoopi97@gmail.com"><img src="이메일로고.png" width=50; height=50;></a>
+                </h3>
+                
+            </footer>
+            
+            <footer id="main_footer">
+                <h3>출처: 다나와 닷컴</h3>
+                <address><a href="http://www.danawa.com/">http://www.danawa.com</address>
+            </footer>
+
+            <script>
+                $('.ml9 .letters').each(function(){
+                $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+                });
+
+                anime.timeline({loop: true})
+                .add({
+                    targets: '.ml9 .letter',
+                    scale: [0, 1],
+                    duration: 1500,
+                    elasticity: 600,
+                    delay: function(el, i) {
+                    return 45 * (i+1)
+                    }
+                }).add({
+                    targets: '.ml9',
+                    opacity: 0,
+                    duration: 1000,
+                    easing: "easeOutExpo",
+                    delay: 1000
+                });
+            </script>
+
+            <script>
+                var slideIndex = 1;
+                showSlides(slideIndex);
+                    
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+                    
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+                    
+                function showSlides(n) {
+                  var i;
+                  var slides = document.getElementsByClassName("mySlides");
+                  var dots = document.getElementsByClassName("dot");
+                   if (n > slides.length) {slideIndex = 1}    
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                      slides[i].style.display = "none";  
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                     slides[slideIndex-1].style.display = "block";  
+                    dots[slideIndex-1].className += " active";
+                    }
+                    </script>
+
+
+                    <script>
+                    anime.timeline({loop: true})
+                    .add({
+                        targets: '.ml5 .line',
+                        opacity: [0.5,1],
+                        scaleX: [0, 1],
+                        easing: "easeInOutExpo",
+                        duration: 700
+                    }).add({
+                        targets: '.ml5 .line',
+                        duration: 600,
+                        easing: "easeOutExpo",
+                        translateY: function(e, i, l) {
+                        var offset = -0.625 + 0.625*2*i;
+                        return offset + "em";
+                        }
+                    }).add({
+                        targets: '.ml5 .ampersand',
+                        opacity: [0,1],
+                        scaleY: [0.5, 1],
+                        easing: "easeOutExpo",
+                        duration: 600,
+                        offset: '-=600'
+                    }).add({
+                        targets: '.ml5 .letters-left',
+                        opacity: [0,1],
+                        translateX: ["0.5em", 0],
+                        easing: "easeOutExpo",
+                        duration: 600,
+                        offset: '-=300'
+                    }).add({
+                        targets: '.ml5 .letters-right',
+                        opacity: [0,1],
+                        translateX: ["-0.5em", 0],
+                        easing: "easeOutExpo",
+                        duration: 600,
+                        offset: '-=600'
+                    }).add({
+                        targets: '.ml5',
+                        opacity: 0,
+                        duration: 1000,
+                        easing: "easeOutExpo",
+                        delay: 1000
+                    });
+                    </script>
+            <script>
+                    window.onscroll = function() {scrollFunction()};
+                    
+                    function scrollFunction() {
+                      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        document.getElementById("myBtn").style.display = "block";
+                      } else {
+                        document.getElementById("myBtn").style.display = "none";
+                      }
+                    }
+                    
+                    function topFunction() {
+                      document.body.scrollTop = 0;
+                      document.documentElement.scrollTop = 0;
+                    }
+                    </script>
+
+                <script>
+                        window.onscroll = function() {scrollFunction()};
+                        
+                        function scrollFunction() {
+                        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                            document.getElementById("myBtn").style.display = "block";
+                        } else {
+                            document.getElementById("myBtn").style.display = "none";
+                        }
+                        }
+                        
+                        function topFunction() {
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
+                        }
+                        </script>
+                    
+    
+            
+    </BODY>
+</HTML>
