@@ -393,7 +393,14 @@
   </script>
 
     </HEAD>
-    <BODY>
+    <BODY onload="openWin()">
+
+        <script>
+            function openWin()
+            {
+                window.open("#","","height=200, width=250,left=100,top=100")
+            }
+            </script>
             <div id="clockbox"></div>
 
             <script type="text/javascript">
